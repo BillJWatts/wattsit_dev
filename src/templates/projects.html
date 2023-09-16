@@ -1,1 +1,16 @@
-{% extends 'under_construction.html' %}
+{% extends 'base.html' %}
+
+{% block project_nav %}
+<form action="/projects/discordbots">
+    <input class="nav_expand" type="submit" value="discord bots">
+</form>
+<!-- <form action="/projects/project2">
+    <input class="nav_expand" type="submit" value="project 2">
+</form>
+<form action="/projects/project3">
+    <input class="nav_expand" type="submit" value="project 3">
+</form>
+<form action="/projects/project4">
+    <input class="nav_expand" type="submit" value="project 4">
+</form> -->
+{% endblock %}

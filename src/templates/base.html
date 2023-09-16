@@ -12,33 +12,36 @@
 </head>
 
 <body>
-    <main id="columns">
+    <main>
         <div id="header">
-            <h1>wattsit_dev</h2>
+            <h1><a href="/">wattsit_dev</a></h1>
         </div>
-        <div id="navbar" class="column">
-            <form action="/">
-                <input type="submit" value="home">
-            </form>
-            <form action="about_me/">
-                <input type="submit" value="about me">
-            </form>
-            <form action="blog/">
-                <input type="submit" value="blog">
-            </form>
-            <form action="projects/">
-                <input type="submit" value="projects">
-            </form>
-            <form action="https://github.com/BillJWatts">
-                <input type="submit" value="github">
-            </form>
-            <form action="https://www.linkedin.com/in/billjwatts/">
-                <input type="submit" value="linkedin">
-            </form>
-        </div>
-        <div id="content" class="column">
-            <h2>{% block content_title %}{% endblock %}</h2>
-            {% block content %}{% endblock %}
+        <div id="base">
+            <div id="navbar" class="column">
+                <form action="/about_me">
+                    <input type="submit" value="about me">
+                </form>
+                <form action="/projects">
+                    <input type="submit" value="projects">
+                </form>
+                {% block project_nav %}{% endblock %}
+                <form action="/blog/">
+                    <input type="submit" value="blog">
+                </form>
+                {% block blog_nav %}{% endblock %}
+                <form action="https://github.com/BillJWatts">
+                    <input type="submit" value="github">
+                </form>
+                <form action="https://www.linkedin.com/in/billjwatts/">
+                    <input type="submit" value="linkedin">
+                </form>
+            </div>
+            <div id="page" class="column">
+                <div id="content">
+                    <h2>{% block content_title %}{% endblock %}</h2>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
         </div>
     </main>
 </body>

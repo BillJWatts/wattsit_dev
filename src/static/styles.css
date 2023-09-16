@@ -1,10 +1,18 @@
-#columns {
+main {
     font-family: 'Poppins', sans-serif;
+}
+
+html,
+body,
+main {
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
     background-color: #fffffe;
-    margin: auto;
 }
 
 p {
@@ -12,9 +20,9 @@ p {
     color: #094067;
 }
 
-
-.column {
-    float: left;
+#base {
+    height: 100%;
+    overflow: hidden;
 }
 
 #navbar {
@@ -23,6 +31,7 @@ p {
     height: 100%;
     font-size: 0;
     padding-top: 20px;
+    float: left;
 }
 
 #navbar input {
@@ -31,12 +40,21 @@ p {
     width: 100%;
     border: none;
     font-family: inherit;
-    font-size: 25;
+    font-size: 23;
     font-weight: 500;
     text-align: left;
     padding-left: 25px;
     color: #094067;
     margin: 10px 0px;
+}
+
+#navbar input.nav_expand {
+    font-size: 18;
+    padding-left: 55px;
+    height: 40px;
+    background-color: #348ed4;
+    color: #fffffe;
+    margin: 4px 0px;
 }
 
 #navbar input:hover {
@@ -45,9 +63,21 @@ p {
     box-shadow: 5px 0px #ef4565;
 }
 
-#content {
+
+
+#page {
     background-color: inherit;
+    height: 100%;
+    width: calc(100% - 180px);
+    overflow: hidden;
+}
+
+#content {
     width: 70%;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+    height: 100%;
 }
 
 #header {
@@ -59,17 +89,30 @@ p {
 
 #header h1 {
     color: #fffffe;
-    padding: 25px;
+    padding-left: 25px;
 }
 
-h2 {
+#header a {
+    text-decoration: none;
+    color: #fffffe;
+}
+
+h2,
+h3,
+h4 {
     color: #094067;
-    padding: 10px 40px;
-    margin-top: 20px;
 }
 
 img {
-    margin-left: 40px;
+    display: block;
+    margin: auto;
     border-radius: 8px;
     box-shadow: 0px 3px #ef4565;
+}
+
+.h1error {
+    font-size: 150;
+    text-align: center;
+    color: #ef4565;
+    margin: auto;
 }
