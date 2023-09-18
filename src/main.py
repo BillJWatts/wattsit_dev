@@ -11,11 +11,6 @@ templates = Jinja2Templates(directory="src/templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def home_page():
-    return RedirectResponse(url="/about_me")
-
-
-@app.get("/about_me", response_class=HTMLResponse)
 async def about_me_page(request: Request):
     return templates.TemplateResponse("about_me.html", {"request": request})
 

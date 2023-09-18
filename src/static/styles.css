@@ -34,7 +34,7 @@ p {
     float: left;
 }
 
-#navbar input {
+#navbar .nav_button {
     background-color: inherit;
     height: 50px;
     width: 100%;
@@ -48,22 +48,32 @@ p {
     margin: 10px 0px;
 }
 
-#navbar input.nav_expand {
-    font-size: 18;
-    padding-left: 55px;
-    height: 40px;
-    background-color: #348ed4;
-    color: #fffffe;
-    margin: 4px 0px;
-}
 
-#navbar input:hover {
+#navbar .nav_button:hover {
     background-color: #094067;
     color: #fffffe;
     box-shadow: 5px 0px #ef4565;
 }
 
+#navbar .nav_expand {
+    font-size: 18;
+    padding-left: 55px;
+    height: 40px;
+    background-color: #379ae6;
+    color: #094067;
+    margin: 4px 0px;
+    width: 100%;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    text-align: left;
+}
 
+#navbar .nav_expand:hover {
+    background-color: #094067;
+    color: #fffffe;
+    box-shadow: 5px 0px #ef4565;
+}
 
 #page {
     background-color: inherit;

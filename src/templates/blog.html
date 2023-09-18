@@ -1,16 +1,7 @@
 {% extends 'base.html' %}
 
 {% block blog_nav %}
-<form action="/blog/dev">
-    <input class="nav_expand" type="submit" value="dev">
-</form>
-<!-- <form action="/projects/blog2">
-    <input class="nav_expand" type="submit" value="blog 2">
-</form>
-<form action="/projects/blog3">
-    <input class="nav_expand" type="submit" value="blog 3">
-</form>
-<form action="/projects/blog4">
-    <input class="nav_expand" type="submit" value="blog 4">
-</form> -->
+<a href="/blog/dev">
+    <button class="nav_expand">dev</button>
+</a>
 {% endblock %}
