@@ -1,11 +1,67 @@
-{% extends 'blog.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Blogs{% endblock %}
-
-{% block content_title %}Blogs{% endblock %}
+{% block title %}Dev Blog | William Watts{% endblock %}
 
 {% block content %}
-<p>If I ever write anything, you might find it here</p>
-<h3>Currently Under Construction</h3>
-<img id="corgi" src="/src/static/construction_corgi.png" alt="Corgi in a hard hat" style="width:400px;height:400px;">
+<section style="margin-bottom: 2rem;">
+    <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem;">Developer Blog</h1>
+    <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px;">
+        Development, politics, philosophy and my usual ranting.
+    </p>
+</section>
+
+{% if all_tags %}
+<!-- Tag Filter Buttons -->
+<div class="filter-bar">
+    <a href="/blog" class="filter-btn {% if not current_tag %}active{% endif %}">All Posts</a>
+    {% for tag in all_tags %}
+    <a href="/blog?tag={{ tag }}" class="filter-btn {% if current_tag == tag %}active{% endif %}">
+        {{ tag }}
+    </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Posts Grid -->
+<div class="grid-2">
+    {% for post in posts %}
+    <div class="card">
+        <div class="card-header" style="margin-bottom: 0.5rem;">
+            <span style="font-size: 0.825rem; color: var(--text-dim); font-family: var(--font-mono);">
+                {{ post.date }} &bull; {{ post.read_time }}
+            </span>
+        </div>
+        <h2 class="card-title" style="margin-bottom: 0.75rem; font-size: 1.25rem;">
+            <a href="/blog/{{ post.slug }}">{{ post.title }}</a>
+        </h2>
+        <p class="card-desc">{{ post.description }}</p>
+
+        <div class="card-footer">
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                {% for tag in post.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            <a href="/blog/{{ post.slug }}" style="font-weight: 600; font-size: 0.875rem;">Read post &rarr;</a>
+        </div>
+    </div>
+    {% else %}
+    <div
+        style="grid-column: 1 / -1; padding: 2.25rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-sharp);">
+        {% if current_tag %}
+        <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+            No blog posts found under tag <span style="color: var(--accent-amber);">"{{ current_tag }}"</span>.
+        </p>
+        <a href="/blog" class="btn btn-secondary">View All Posts</a>
+        {% else %}
+        <div style="font-family: var(--font-mono); font-size: 0.875rem;">
+            <p style="color: var(--text-dim); margin-bottom: 0.4rem;">$ find /blog/posts -name "*.md"</p>
+            <p style="color: var(--text-muted); margin-bottom: 0.75rem;">0 files found. No articles published yet.</p>
+            <p style="font-family: var(--font-sans); color: var(--text-dim); font-size: 0.875rem;">Check back soon for
+                new dev posts and engineering notes!</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

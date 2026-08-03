@@ -1,0 +1,36 @@
+[
+  {
+    "id": "discord-app-grandtheftradio",
+    "title": "Grand Theft Radio - Discord Radio App",
+    "description": "Discord app for streaming music from all Grand Theft Auto radio stations to Discord Voice Channels.",
+    "category": "Discord Apps",
+    "tags": [
+      "Python",
+      "discord.py",
+      "AsyncIO",
+      "ffmpeg",
+      "Docker"
+    ],
+    "github_url": "https://github.com/BillJWatts/GrandTheftRadio",
+    "live_url": "",
+    "featured": true,
+    "status": "Active"
+  },
+  {
+    "id": "wattsit-dev",
+    "title": "Wattsit.Dev - Personal Website",
+    "description": "Personal website for William Watts",
+    "category": "Websites",
+    "tags": [
+      "FastAPI",
+      "Python",
+      "Docker",
+      "uv",
+      "Jinja2"
+    ],
+    "github_url": "https://github.com/BillJWatts/wattsit_dev",
+    "live_url": "https://wattsit.dev",
+    "featured": true,
+    "status": "Live"
+  }
+]

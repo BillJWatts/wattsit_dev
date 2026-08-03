@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}404{% endblock %}
-
-{% block content_title %}Page not found!{% endblock %}
+{% block title %}404 - Page Not Found | William Watts{% endblock %}
 
 {% block content %}
-<h1 class="h1error">404</h1>
+<div class="error-wrapper">
+    <div class="error-code">404</div>
+    <h1 style="font-size: 1.8rem; margin-bottom: 1rem;">Page Not Found</h1>
+    <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2rem auto; font-size: 1.05rem;">
+        The page or post you are looking for doesn't exist or has been moved.
+    </p>
+    <a href="/" class="btn btn-primary">
+        Return to Home Page
+    </a>
+</div>
 {% endblock %}
